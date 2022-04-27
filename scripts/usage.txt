@@ -1,0 +1,5 @@
+daten vorbereiten:
+python 2_prepare_wind_data.py
+
+simulieren mit turbinentyp und vorgegebener periode:
+python 3_wind_power_simulation.py -turbine "Vestas_V90-2.0" -startyear 2015 -endyear 2020
