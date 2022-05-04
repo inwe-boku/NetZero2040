@@ -99,5 +99,8 @@ def download_era5(month):
 
 if __name__ == '__main__':
     for YEAR in YEARS:
-        pool = Pool()
-        pool.map(download_era5,MONTHS)
+        if len(glob.glob(DOWNLOAD_DIR+'/era5_wind_' + COUNTRY + '_' + str(YEAR) + '??.nc')) == 12:
+            print('Skipping',YEAR,' already there...')
+        else:
+            pool = Pool()
+            pool.map(download_era5,MONTHS)
